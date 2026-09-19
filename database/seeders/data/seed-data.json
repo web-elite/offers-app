@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "note": "Seed dataset parsed directly from the user's raw list. Every row confidence=user-list unless noted. Fields marked null are unknown — crawler/research enrichment pending.",
+    "generated_at": "2026-09-16"
+  },
+  "categories": [
+    {"slug": "ai", "name_fa": "هوش مصنوعی", "name_en": "AI", "is_active": true, "sort_order": 1},
+    {"slug": "hosting", "name_fa": "هاستینگ", "name_en": "Hosting", "is_active": true, "sort_order": 2},
+    {"slug": "domain", "name_fa": "دامنه", "name_en": "Domain", "is_active": true, "sort_order": 3},
+    {"slug": "community", "name_fa": "کامونیتی / آموزش", "name_en": "Community", "is_active": true, "sort_order": 4}
+  ],
+  "verification_methods": [
+    {"key": "none", "label_fa": "بدون نیاز به ثبت‌نام/تأیید"},
+    {"key": "email", "label_fa": "ایمیل"},
+    {"key": "phone", "label_fa": "شماره موبایل"},
+    {"key": "card", "label_fa": "کارت بانکی/اعتباری"},
+    {"key": "identity", "label_fa": "احراز هویت"},
+    {"key": "telegram", "label_fa": "تلگرام"},
+    {"key": "discord", "label_fa": "دیسکورد"},
+    {"key": "unknown", "label_fa": "نامشخص"}
+  ],
+  "providers": [
+    {"slug": "kktoken", "name": "KKToken", "category": "ai", "canonical_url": "https://kktoken.cc", "referral_url": "https://kktoken.cc/sign-up?aff=zxbp", "offer": {"title_fa": "۷۵ دلار اعتبار اولیه با لینک معرفی", "free_tier_type": "signup_bonus", "credits_raw": "$75 wallet charged after with my link", "credits_amount": 75, "credits_unit": "usd", "verification": ["unknown"], "access_types": ["api"], "notes_fa": "طبق لیست کاربر: با لینک معرفی، ۷۵ دلار به کیف پول اضافه می‌شود."}, "confidence": "user-list"},
+    {"slug": "anymodel", "name": "AnyModel", "category": "ai", "canonical_url": "https://anymodel.org", "referral_url": "https://anymodel.org/?ref=DXHFT5Z", "offer": {"title_fa": "۱۲ مدل رایگان", "free_tier_type": "free_models", "credits_raw": "12 free model", "credits_amount": 12, "credits_unit": "model", "verification": ["unknown"], "access_types": ["api"], "notes_fa": null}, "confidence": "user-list"},
+    {"slug": "kiosapi", "name": "KiosAPI", "category": "ai", "canonical_url": "https://kiosapi.com", "referral_url": "https://kiosapi.com/sign-up?aff=cUQr", "offer": {"title_fa": "سرعت بالا (بدون مدل رایگان)", "free_tier_type": "unknown", "credits_raw": "very good speed but no free model", "credits_amount": null, "credits_unit": null, "verification": ["unknown"], "access_types": ["api"], "notes_fa": "طبق لیست کاربر: سرعت خیلی خوب، اما مدل رایگان ندارد."}, "confidence": "user-list"},
+    {"slug": "agentrouter", "name": "AgentRouter", "category": "ai", "canonical_url": "https://agentrouter.org", "referral_url": "https://agentrouter.org/register?aff=127a", "offer": {"title_fa": "۷۰ دلار اعتبار اولیه با لینک معرفی", "free_tier_type": "signup_bonus", "credits_raw": "$70 wallet charged after with my link", "credits_amount": 70, "credits_unit": "usd", "verification": ["unknown"], "access_types": ["api"], "notes_fa": null}, "confidence": "user-list"},
+    {"slug": "chat-b-ai", "name": "B.AI Chat", "category": "ai", "canonical_url": "https://chat.b.ai", "referral_url": "https://chat.b.ai/chat?invite_code=2KTXJM", "offer": {"title_fa": "هر روز ۴ مدل رایگان", "free_tier_type": "daily_reset", "credits_raw": "everyday have 4 free model", "credits_amount": 4, "credits_unit": "model", "verification": ["unknown"], "access_types": ["api", "chat_ui"], "notes_fa": null}, "confidence": "user-list"},
+    {"slug": "1min-ai", "name": "1min.AI", "category": "ai", "canonical_url": "https://1min.ai", "referral_url": "https://1min.ai?referrer_id=9559d073-740f-475d-a877-6987ddb1c6a5", "offer": {"title_fa": "۴۵٬۰۰۰ اعتبار با چک روزانه", "free_tier_type": "daily_reset", "credits_raw": "daily check website and get 45,000 credit", "credits_amount": 45000, "credits_unit": "credit", "verification": ["unknown"], "access_types": ["api", "web"], "notes_fa": "با ورود روزانه به سایت اعتبار دریافت می‌شود."}, "confidence": "user-list"},
+    {"slug": "llm7", "name": "LLM7", "category": "ai", "canonical_url": "https://dash.llm7.io", "referral_url": "https://dash.llm7.io/?r=2AR", "offer": {"title_fa": "هر روز ۱ میلیون توکن", "free_tier_type": "daily_reset", "credits_raw": "1M Token everyday", "credits_amount": 1000000, "credits_unit": "token", "verification": ["unknown"], "access_types": ["api"], "notes_fa": null}, "confidence": "user-list"},
+    {"slug": "apimaster", "name": "ApiMaster", "category": "ai", "canonical_url": "https://apimaster.ai", "referral_url": "https://apimaster.ai/register?ref=xgkd3goc", "offer": {"title_fa": "۲۰ دلار اعتبار رایگان با جوین تلگرام و دیسکورد", "free_tier_type": "signup_bonus", "credits_raw": "join telegram and discord get 20$ for free gpt 6 Astra", "credits_amount": 20, "credits_unit": "usd", "verification": ["telegram", "discord"], "access_types": ["api"], "notes_fa": "مدل ذکرشده در متن کاربر: GPT 6 Astra."}, "confidence": "user-list"},
+    {"slug": "cline", "name": "Cline", "category": "ai", "canonical_url": "https://app.cline.bot", "referral_url": "https://app.cline.bot/dashboard/account?tab=api-keys", "offer": {"title_fa": "۴ مدل رایگان با ریست ۲۴ ساعته", "free_tier_type": "daily_reset", "credits_raw": "4 free model - reset 24h", "credits_amount": 4, "credits_unit": "model", "verification": ["unknown"], "access_types": ["ide", "api"], "notes_fa": "پنل API-keys داخل داشبورد اکانت."}, "confidence": "user-list"},
+    {"slug": "godrouter", "name": "GodRouter", "category": "ai", "canonical_url": "https://godrouter.cyou", "referral_url": "https://godrouter.cyou/sign-up?aff=aLuq", "offer": {"title_fa": "۵۰ دلار اعتبار اولیه با لینک معرفی", "free_tier_type": "signup_bonus", "credits_raw": "$50 wallet charged after with my link", "credits_amount": 50, "credits_unit": "usd", "verification": ["unknown"], "access_types": ["api"], "notes_fa": null}, "confidence": "user-list"},
+    {"slug": "getunikey", "name": "UniKey", "category": "ai", "canonical_url": "https://www.getunikey.ai", "referral_url": "https://www.getunikey.ai/sign-up?aff=KEdr", "offer": {"title_fa": "۹۰ اعتبار اولیه", "free_tier_type": "signup_bonus", "credits_raw": "90 credit", "credits_amount": 90, "credits_unit": "credit", "verification": ["unknown"], "access_types": ["api"], "notes_fa": null}, "confidence": "user-list"},
+    {"slug": "atria-asi", "name": "Atria ASI", "category": "ai", "canonical_url": "https://api.atria-asi.ai", "referral_url": null, "offer": {"title_fa": "۱۰۰ میلیون توکن رایگان برای مدل اختصاصی", "free_tier_type": "free_credits", "credits_raw": "100M token for their model: Atria-Dawn-Preview", "credits_amount": 100000000, "credits_unit": "token", "verification": ["unknown"], "access_types": ["api"], "notes_fa": "طبق ادعای بنچمارک خودشان از آخرین مدل‌های Claude و GPT قوی‌تر است (ادعای سازنده، تأییدنشده)."}, "confidence": "user-list"},
+    {"slug": "experientiallabs", "name": "Experiential Labs", "category": "ai", "canonical_url": "https://experientiallabs.ai", "referral_url": null, "offer": {"title_fa": "۱ میلیون توکن + ۵ مدل رایگان (با پرداخت ۱ دلار)", "free_tier_type": "free_credits", "credits_raw": "1m token and have 5 free model but must be pay 1$", "credits_amount": 1000000, "credits_unit": "token", "verification": ["unknown"], "access_types": ["api"], "notes_fa": "برای دریافت، پرداخت ۱ دلار لازم است."}, "confidence": "user-list"},
+    {"slug": "bynara", "name": "Bynara Router", "category": "ai", "canonical_url": "https://router.bynara.id", "referral_url": "https://router.bynara.id/register?ref=YUPF6RSF", "offer": {"title_fa": "۷ میلیون توکن در روز + ۶ مدل رایگان", "free_tier_type": "daily_reset", "credits_raw": "7M token per day - have 6 model free", "credits_amount": 7000000, "credits_unit": "token", "verification": ["unknown"], "access_types": ["api"], "notes_fa": null}, "confidence": "user-list"},
+    {"slug": "lumosel", "name": "Lumosel", "category": "ai", "canonical_url": "https://lumosel.vip", "referral_url": "https://lumosel.vip/signup?ref=e2088b4b", "offer": {"title_fa": "۵ دلار با لینک معرفی (بدون مدل رایگان)", "free_tier_type": "referral_bonus", "credits_raw": "with my link earn 5$ - no have free model", "credits_amount": 5, "credits_unit": "usd", "verification": ["unknown"], "access_types": ["api"], "notes_fa": "مدل رایگان ندارد."}, "confidence": "user-list"},
+    {"slug": "vsllm", "name": "VSLLM", "category": "ai", "canonical_url": "https://vsllm.cc", "referral_url": "https://vsllm.cc/register?aff=V9wJ", "offer": {"title_fa": "مدل رایگان GLM-4.7-Flash", "free_tier_type": "free_models", "credits_raw": "only have glm-4.7-flash-free model", "credits_amount": null, "credits_unit": null, "verification": ["unknown"], "access_types": ["api"], "notes_fa": "تنها مدل رایگان: glm-4.7-flash-free"}, "confidence": "user-list"},
+    {"slug": "freemodel", "name": "FreeModel", "category": "ai", "canonical_url": "https://freemodel.dev", "referral_url": "https://freemodel.dev/invite/FRE-4cc26de7", "offer": {"title_fa": "۱۰ دلار اعتبار با لینک معرفی", "free_tier_type": "signup_bonus", "credits_raw": "with my link get 10$", "credits_amount": 10, "credits_unit": "usd", "verification": ["unknown"], "access_types": ["api"], "notes_fa": null}, "confidence": "user-list"},
+    {"slug": "aifreeforever", "name": "AI Free Forever", "category": "ai", "canonical_url": "https://aifreeforever.com", "referral_url": null, "offer": {"title_fa": "سرویس رایگان AI (جزئیات نامشخص)", "free_tier_type": "unknown", "credits_raw": null, "credits_amount": null, "credits_unit": null, "verification": ["unknown"], "access_types": ["unknown"], "notes_fa": "در لیست کاربر بدون توضیح آمده؛ نیازمند بررسی کراولر."}, "confidence": "user-list"},
+    {"slug": "duck-ai", "name": "Duck.ai", "category": "ai", "canonical_url": "https://duck.ai", "referral_url": null, "offer": {"title_fa": "چت رایگان با GPT-5.6 (فقط وب)", "free_tier_type": "forever_free", "credits_raw": "free gpt 5.6", "credits_amount": null, "credits_unit": null, "verification": ["unknown"], "access_types": ["chat_ui", "web"], "notes_fa": "طبق لیست کاربر: فقط وب."}, "confidence": "user-list"},
+    {"slug": "chatanywhere", "name": "ChatAnywhere", "category": "ai", "canonical_url": "https://chatanywhere.tech", "referral_url": null, "offer": {"title_fa": "API رایگان (جزئیات نامشخص)", "free_tier_type": "unknown", "credits_raw": null, "credits_amount": null, "credits_unit": null, "verification": ["unknown"], "access_types": ["api", "web"], "notes_fa": "در لیست کاربر بدون توضیح آمده؛ نیازمند بررسی کراولر."}, "confidence": "user-list"},
+    {"slug": "lightvela", "name": "LightVela", "category": "ai", "canonical_url": "https://lightvela.ai", "referral_url": null, "offer": {"title_fa": "طرح رایگان یک‌ماهه: ۱ هوش مصنوعی + ۴۵۰۰ اعتبار در ماه", "free_tier_type": "trial", "credits_raw": "4500 credit/month, 2 vCPU + 4GB RAM, 50GB storage, 24h access, Telegram integration (1 month free)", "credits_amount": 4500, "credits_unit": "credit", "verification": ["unknown"], "access_types": ["web", "telegram_bot"], "notes_fa": "مزایای طرح رایگان (فقط ۱ ماه): ۱ هوش مصنوعی، ۴۵۰۰ اعتبار در ماه، ۲ پردازنده مجازی + ۴ گیگابایت رم (محیط تست)، ۵۰ گیگابایت فضای ذخیره‌سازی، دسترسی ۲۴ ساعته، ادغام با تلگرام و سایر پلتفرم‌ها."}, "confidence": "user-list"},
+    {"slug": "infinityfree", "name": "InfinityFree", "category": "hosting", "canonical_url": "https://infinityfree.com", "referral_url": null, "offer": {"title_fa": "هاستینگ رایگان (مناسب WordPress و Laravel)", "free_tier_type": "forever_free", "credits_raw": "1 free hosting - good for wordpress laravel and etc", "credits_amount": null, "credits_unit": null, "verification": ["unknown"], "access_types": ["web"], "notes_fa": null}, "confidence": "user-list"},
+    {"slug": "dnshe", "name": "DNShe", "category": "domain", "canonical_url": "https://my.dnshe.com", "referral_url": "https://my.dnshe.com/go.php?code=***", "offer": {"title_fa": "۶ دامنه رایگان", "free_tier_type": "forever_free", "credits_raw": "6 free domain", "credits_amount": 6, "credits_unit": "domain", "verification": ["unknown"], "access_types": ["web"], "notes_fa": "لینک معرفی کاربر شامل کد است (***) — قبل از انتشار نهایی باید کد واقعی جایگزین شود."}, "confidence": "user-list"},
+    {"slug": "archive-tell", "name": "ArchiveTell (کانال تلگرام)", "category": "community", "canonical_url": "https://t.me/s/ArchiveTell", "referral_url": null, "offer": {"title_fa": "آرشیو آموزش استفاده از هوش مصنوعی رایگان", "free_tier_type": "forever_free", "credits_raw": null, "credits_amount": null, "credits_unit": null, "verification": ["none"], "access_types": ["web"], "notes_fa": "طبق خواسته کاربر: منبع برداشت مطالب رایگان AI. در سایت به‌عنوان منبع آموزشی معرفی شود."}, "confidence": "user-list"}
+  ],
+  "ai_models": [
+    {"slug": "gpt-5.6", "name": "GPT-5.6", "creator": "openai"},
+    {"slug": "gpt-6-astra", "name": "GPT-6 Astra", "creator": "openai", "note": "نام مدل از متن کاربر (تأییدنشده)"},
+    {"slug": "glm-4.7-flash-free", "name": "GLM-4.7-Flash-Free", "creator": "zhipu"},
+    {"slug": "atria-dawn-preview", "name": "Atria-Dawn-Preview", "creator": "atria"}
+  ],
+  "model_creators": [
+    {"slug": "openai", "name": "OpenAI"},
+    {"slug": "zhipu", "name": "Zhipu (GLM)"},
+    {"slug": "atria", "name": "Atria ASI"},
+    {"slug": "anthropic", "name": "Anthropic"},
+    {"slug": "google", "name": "Google"}
+  ],
+  "offer_model_links": [
+    {"offer_provider": "duck-ai", "model": "gpt-5.6"},
+    {"offer_provider": "apimaster", "model": "gpt-6-astra"},
+    {"offer_provider": "vsllm", "model": "glm-4.7-flash-free"},
+    {"offer_provider": "atria-asi", "model": "atria-dawn-preview"}
+  ],
+  "tags": [
+    {"slug": "signup-bonus", "name_fa": "اعتبار اولیه", "match": ["signup_bonus"]},
+    {"slug": "daily-reset", "name_fa": "ریست روزانه", "match": ["daily_reset"]},
+    {"slug": "free-models", "name_fa": "مدل رایگان", "match": ["free_models"]},
+    {"slug": "free-credits", "name_fa": "اعتبار رایگان", "match": ["free_credits"]},
+    {"slug": "referral-bonus", "name_fa": "پاداش معرفی", "match": ["referral_bonus"]},
+    {"slug": "trial", "name_fa": "دوره آزمایشی", "match": ["trial"]},
+    {"slug": "api-access", "name_fa": "دسترسی API", "match_access": ["api"]},
+    {"slug": "web-chat", "name_fa": "چت وب", "match_access": ["chat_ui"]}
+  ],
+  "ambiguities": [
+    "وضعیت verification برای اکثر ردیف‌ها نامشخص است (فقط apimaster از متن کاربر قطعی است: تلگرام+دیسکورد).",
+    "کد معرفی DNShe در لیست کاربر *** است و باید قبل از انتشار با کد واقعی جایگزین شود.",
+    "دسته‌بندی free_tier_type برای 1min.ai بر اساس «چک روزانه» daily_reset فرض شد.",
+    "«GPT 6 Astra» و «gpt 5.6» عین متن کاربر هستند و از نظر رسمی تأیید نشده‌اند."
+  ]
+}
