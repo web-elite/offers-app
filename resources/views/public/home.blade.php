@@ -3,10 +3,28 @@
 @section('title', \App\Support\Settings::get(\App\Support\Settings::SITE_TITLE).' | '.__('ui.home_title_suffix'))
 
 @section('content')
+    {{-- Mobile-only quick filter band (hidden on desktop). The desktop filter sidebar
+         is rendered inline below, inside the two-column layout grid, so it aligns with
+         the offers content instead of floating as a full-width band above it. --}}
     @include('public.partials.filter-bar')
 
-    <div class="container page">
-        @if($showStrips)
+    <div class="container page page--with-sidebar">
+        <div class="filterbar__layout">
+            {{-- Desktop: sticky filter sidebar — hidden on mobile (≤720px) --}}
+            <form method="GET" action="{{ url('/') }}" class="filterbar__form filterbar__form--sidebar" aria-label="{{ __('ui.search') }}">
+                <div class="filterbar__sidebar-head">
+                    <h2 class="filterbar__sidebar-title">
+                        @include('public.partials.icon', ['name' => 'filter'])
+                        {{ __('ui.more_filters') }}
+                    </h2>
+                </div>
+                @include('public.partials.filter-fields', [
+                    'variant' => 'sidebar',
+                ])
+            </form>
+
+            <div class="page__body">
+            @if($showStrips)
             @if($freshOffers->isNotEmpty())
                 <section class="strip" aria-labelledby="fresh-title">
                     <div class="strip__head">
@@ -74,6 +92,8 @@
                 </div>
             @endif
         </section>
+            </div>
+        </div>
     </div>
 
     @include('public.partials.submit-form')

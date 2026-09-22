@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\AdminOverride;
-use App\Models\AiModel;
-use App\Models\Offer;
-use App\Models\OfferVersion;
-use App\Models\Provider;
 use App\Models\Tag;
-use App\Models\VerificationMethod;
-use App\Support\EffectiveOffer;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Offer;
+use App\Models\AiModel;
+use App\Models\Provider;
+use App\Models\OfferVersion;
 use Illuminate\Http\Request;
+use App\Models\AdminOverride;
+use App\Support\EffectiveOffer;
 use Illuminate\Validation\Rule;
+use App\Models\VerificationMethod;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Database\Eloquent\Model;
 
 class OfferController extends CrudController
 {
@@ -64,20 +63,25 @@ class OfferController extends CrudController
         ]],
     ];
 
-    protected array $columns = [
-        ['label' => 'عنوان آفر', 'value' => fn (Offer $o) => $o->title_fa],
-        ['label' => 'ارائه‌دهنده', 'value' => fn (Offer $o) => $o->provider?->name],
-        ['label' => 'نوع', 'value' => fn (Offer $o) => $o->free_tier_type],
-        ['label' => 'اعتبار', 'value' => fn (Offer $o) => $o->credits_amount !== null
-            ? number_format((int) $o->credits_amount).' '.($o->credits_unit ?? '')
-            : null],
-        ['label' => 'وضعیت', 'value' => fn (Offer $o) => $o->status],
-        ['label' => 'آخرین بررسی', 'value' => fn (Offer $o) => $o->last_verified_at?->format('Y-m-d H:i')],
-        ['label' => 'گزارش', 'value' => fn (Offer $o) => (string) ($o->reports_count ?? 0)],
-    ];
+    protected function columns(): array
+    {
+        return [
+            ['label' => 'عنوان آفر', 'value' => fn (Offer $o) => $o->title_fa],
+            ['label' => 'ارائه‌دهنده', 'value' => fn (Offer $o) => $o->provider?->name],
+            ['label' => 'نوع', 'value' => fn (Offer $o) => $o->free_tier_type],
+            ['label' => 'اعتبار', 'value' => fn (Offer $o) => $o->credits_amount !== null
+                ? number_format((int) $o->credits_amount).' '.($o->credits_unit ?? '')
+                : null],
+            ['label' => 'وضعیت', 'value' => fn (Offer $o) => $o->status],
+            ['label' => 'آخرین بررسی', 'value' => fn (Offer $o) => $o->last_verified_at?->format('Y-m-d H:i')],
+            ['label' => 'گزارش', 'value' => fn (Offer $o) => (string) ($o->reports_count ?? 0)],
+        ];
+    }
 
-    protected array $fields = [
-        ['name' => 'provider_id', 'label' => 'ارائه‌دهنده', 'type' => 'select', 'rules' => ['required', 'integer', 'exists:providers,id'], 'options' => fn () => Provider::query()->orderBy('name')->pluck('name', 'id')->all(), 'col' => 6],
+    protected function fields(): array
+    {
+        return [
+            ['name' => 'provider_id', 'label' => 'ارائه‌دهنده', 'type' => 'select', 'rules' => ['required', 'integer', 'exists:providers,id'], 'options' => fn () => Provider::query()->orderBy('name')->pluck('name', 'id')->all(), 'col' => 6],
         ['name' => 'title_fa', 'label' => 'عنوان آفر', 'type' => 'text', 'rules' => ['required', 'string', 'max:191'], 'col' => 6],
         ['name' => 'slug', 'label' => 'شناسه لاتین', 'type' => 'text', 'rules' => ['required', 'string', 'max:191', 'alpha_dash'], 'unique' => ['offers', 'slug'], 'col' => 6],
         ['name' => 'status', 'label' => 'وضعیت آفر', 'type' => 'select', 'rules' => ['required'], 'options' => [
@@ -124,8 +128,9 @@ class OfferController extends CrudController
         ['name' => 'raw_note_fa', 'label' => 'یادداشت داخلی / متن خام منبع', 'type' => 'textarea', 'rules' => ['nullable', 'string', 'max:5000'], 'col' => 12],
         ['name' => 'verification_method_ids', 'label' => 'روش‌های تأیید مورد نیاز', 'type' => 'multiselect', 'options' => fn () => VerificationMethod::query()->orderBy('id')->pluck('label_fa', 'id')->all(), 'col' => 12],
         ['name' => 'ai_model_ids', 'label' => 'مدل‌های مرتبط', 'type' => 'multiselect', 'options' => fn () => AiModel::query()->orderBy('name')->pluck('name', 'id')->all(), 'col' => 12],
-        ['name' => 'tag_ids', 'label' => 'برچسب‌ها', 'type' => 'multiselect', 'options' => fn () => Tag::query()->orderBy('name_fa')->pluck('name_fa', 'id')->all(), 'col' => 12],
-    ];
+            ['name' => 'tag_ids', 'label' => 'برچسب‌ها', 'type' => 'multiselect', 'options' => fn () => Tag::query()->orderBy('name_fa')->pluck('name_fa', 'id')->all(), 'col' => 12],
+        ];
+    }
 
     protected function bulkUrl(): ?string
     {

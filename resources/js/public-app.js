@@ -613,4 +613,56 @@
             });
         });
     }
+
+    /* ------------------------------------------------------------------ *
+     * Filter FAB + drawer (mobile) — open/close the slide-up filter panel
+     * ------------------------------------------------------------------ */
+    (function filterDrawer() {
+        var fab = d.querySelector('[data-filter-fab-toggle]');
+        var drawer = d.getElementById('filter-drawer');
+        if (!fab || !drawer) return;
+
+        var closeButtons = drawer.querySelectorAll('[data-filter-close]');
+
+        function open() {
+            drawer.classList.add('is-open');
+            drawer.removeAttribute('hidden');
+            fab.setAttribute('aria-expanded', 'true');
+            // Focus the close button for accessibility
+            var closeBtn = drawer.querySelector('.filter-drawer__close');
+            if (closeBtn) closeBtn.focus();
+        }
+
+        function close() {
+            drawer.classList.remove('is-open');
+            drawer.setAttribute('hidden', '');
+            fab.setAttribute('aria-expanded', 'false');
+            fab.focus();
+        }
+
+        fab.addEventListener('click', function () {
+            if (drawer.classList.contains('is-open')) {
+                close();
+            } else {
+                open();
+            }
+        });
+
+        Array.prototype.forEach.call(closeButtons, function (btn) {
+            btn.addEventListener('click', close);
+        });
+
+        // Close on Escape
+        d.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+                close();
+            }
+        });
+
+        // Close when clicking the scrim
+        var scrim = drawer.querySelector('.filter-drawer__scrim');
+        if (scrim) {
+            scrim.addEventListener('click', close);
+        }
+    })();
 })();

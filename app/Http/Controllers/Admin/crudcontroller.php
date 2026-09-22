@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Admin;
-use Illuminate\Contracts\View\View as ViewContract;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Contracts\View\View as ViewContract;
 
 /**
  * Config-driven admin CRUD used by all content resources.
@@ -57,7 +57,7 @@ abstract class CrudController extends Controller
             'singular' => $this->singular,
             'items' => $items,
             'rows' => $this->rows($items),
-            'columns' => $this->columns,
+            'columns' => $this->columns(),
             'routeName' => $this->routeName(),
             'searchable' => $this->searchable !== [],
             'filters' => $this->indexFilters,
@@ -206,11 +206,12 @@ abstract class CrudController extends Controller
     protected function rows(mixed $items): array
     {
         $rows = [];
+        $columns = $this->columns();
 
         foreach ($items as $item) {
             $cells = [];
 
-            foreach ($this->columns as $column) {
+            foreach ($columns as $column) {
                 $cells[] = $this->cellValue($item, $column);
             }
 
@@ -267,7 +268,18 @@ abstract class CrudController extends Controller
         return array_keys($this->syncRelations);
     }
 
+    /** @return array<int, array> table columns for the index view */
+    protected function columns(): array
+    {
+        return $this->columns;
+    }
+
     /** @return array<int, array> with option callables resolved */
+    protected function fields(): array
+    {
+        return $this->fields;
+    }
+
     protected function resolvedFields(): array
     {
         return array_map(function (array $field): array {
@@ -276,14 +288,14 @@ abstract class CrudController extends Controller
             }
 
             return $field;
-        }, $this->fields);
+        }, $this->fields());
     }
 
     protected function rules(?Model $model): array
     {
         $rules = [];
 
-        foreach ($this->fields as $field) {
+        foreach ($this->fields() as $field) {
             $name = $field['name'];
             $type = $field['type'] ?? 'text';
 

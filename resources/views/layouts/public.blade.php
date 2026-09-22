@@ -27,7 +27,7 @@
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ route('public.sitemap') }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/public-app.js', 'resources/js/qrcode-lib.js'])
     <script>
         // Restore persisted theme before paint to avoid a flash
         ;(function () {
@@ -37,8 +37,6 @@
             }
         })();
     </script>
-    <script src="{{ asset('vendor/qr/qrcode.min.js') }}" defer></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">{{ __('ui.go_to_content') }}</a>
