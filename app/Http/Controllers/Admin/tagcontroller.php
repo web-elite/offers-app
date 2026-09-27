@@ -9,7 +9,7 @@ class TagController extends CrudController
     protected string $modelClass = Tag::class;
     protected string $title = 'برچسب‌ها';
     protected string $singular = 'برچسب';
-    protected string $route = 'admin.tags';
+    protected ?string $route = 'admin.tags';
     protected array $searchable = ['name_fa', 'slug'];
     protected string $orderColumn = 'name_fa';
     protected string $orderDirection = 'asc';

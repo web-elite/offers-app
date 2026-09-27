@@ -10,7 +10,7 @@ class ProviderController extends CrudController
     protected string $modelClass = Provider::class;
     protected string $title = 'ارائه‌دهنده‌ها';
     protected string $singular = 'ارائه‌دهنده';
-    protected string $route = 'admin.providers';
+    protected ?string $route = 'admin.providers';
     protected array $searchable = ['name', 'slug', 'canonical_url'];
     protected array $with = ['category'];
     protected string $orderColumn = 'name';

@@ -9,7 +9,7 @@ class VerificationMethodController extends CrudController
     protected string $modelClass = VerificationMethod::class;
     protected string $title = 'روش‌های تأیید هویت';
     protected string $singular = 'روش تأیید';
-    protected string $route = 'admin.verification-methods';
+    protected ?string $route = 'admin.verification-methods';
     protected array $searchable = ['key', 'label_fa'];
     protected string $orderColumn = 'id';
     protected string $orderDirection = 'asc';
